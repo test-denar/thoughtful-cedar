@@ -9,7 +9,7 @@ export default class ContactSection extends React.Component {
                   <div className="sr-only">
                     <label>Don't fill this out if you're human: <input name="bot-field" /></label>
                   </div>
-                  <input type="hidden" name="form-name" value="contact-form" />
+                  <input type="hidden" name="form-name" value="contactForm" />
                   <div className="form-group">
                     <label htmlFor="name">Name</label>
                     <input type="text" name="name" id="name" placeholder="Your name" required />

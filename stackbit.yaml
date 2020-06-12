@@ -9,7 +9,7 @@ dataDir: src/data
 pagesDir: src/pages
 pageLayoutKey: template
 metadata:
-  title: New
+  title: Starter
   description: An ultra customizable generic theme
   author: Stackbit
   authorURL: 'https://www.stackbit.com'

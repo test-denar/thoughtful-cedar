@@ -1,6 +1,6 @@
 {
-  "name": "stackbit-new-theme",
-  "description": "Stackbit New Theme",
+  "name": "stackbit-starter-theme",
+  "description": "Stackbit Starter Theme",
   "version": "0.0.1",
   "license": "MIT",
   "scripts": {
