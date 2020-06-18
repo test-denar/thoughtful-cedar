@@ -19,7 +19,9 @@ export default class BlogPostFeedItem extends React.Component {
                     )}
                     <div className="card__body">
                         <header className="card__header">
-                            <BlogPostCategories {...this.props} categories={_.get(post, 'frontmatter.categories', null)} container_class={'card__meta'} />
+                            {_.get(post, 'frontmatter.categories', null) && (
+                                <BlogPostCategories {...this.props} categories={_.get(post, 'frontmatter.categories', null)} container_class={'card__meta'} />
+                            )}
                             {_.get(blog_feed_section, 'title', null) ? (
                                 <h3 className="h4 card__title"><Link to={safePrefix(_.get(post, 'url', null))}>{_.get(post, 'frontmatter.title', null)}</Link></h3>
                             ) : 
