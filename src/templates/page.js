@@ -22,10 +22,10 @@ export default class Page extends React.Component {
             <article className="page">
               <div className="container container--md">
                 <header className="page__header">
-                  <h1 className="page__title">{_.get(this.props, 'pageContext.frontmatter.title')}</h1>
+                  <h1 className="page__title">{_.get(this.props, 'pageContext.frontmatter.title', null)}</h1>
                 </header>
                 <div className="page__copy">
-                  {htmlToReact(_.get(this.props, 'pageContext.html'))}
+                  {htmlToReact(_.get(this.props, 'pageContext.html', null))}
                 </div>
               </div>
             </article>

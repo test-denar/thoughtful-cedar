@@ -24,20 +24,20 @@ export default class Post extends React.Component {
             <Layout {...this.props}>
             <article className="post">
               <div className="container container--md">
-                {_.get(this.props, 'pageContext.frontmatter.image') && (
+                {_.get(this.props, 'pageContext.frontmatter.image', null) && (
                 <div className="post__image">
-                  <img src={safePrefix(_.get(this.props, 'pageContext.frontmatter.image'))} alt={_.get(this.props, 'pageContext.frontmatter.title')} />
+                  <img src={safePrefix(_.get(this.props, 'pageContext.frontmatter.image', null))} alt={_.get(this.props, 'pageContext.frontmatter.title', null)} />
                 </div>
                 )}
                 <header className="post__header">
-                  {_.get(this.props, 'pageContext.frontmatter.categories') && (
-                    <BlogPostCategories {...this.props} categories={_.get(this.props, 'pageContext.frontmatter.categories')} container_class={'post__meta'} />
+                  {_.get(this.props, 'pageContext.frontmatter.categories', null) && (
+                    <BlogPostCategories {...this.props} categories={_.get(this.props, 'pageContext.frontmatter.categories', null)} container_class={'post__meta'} />
                   )}
-                  <h1 className="post__title">{_.get(this.props, 'pageContext.frontmatter.title')}</h1>
+                  <h1 className="post__title">{_.get(this.props, 'pageContext.frontmatter.title', null)}</h1>
                   <div className="post__meta">
-                    <span>On <time dateTime={moment(_.get(this.props, 'pageContext.frontmatter.date')).strftime('%Y-%m-%d %H:%M')}>{moment(_.get(this.props, 'pageContext.frontmatter.date')).strftime('%B %d, %Y')}</time></span>
-                    {_.get(this.props, 'pageContext.frontmatter.author') && ((() => {
-                        let author = getData(this.props.pageContext.site.data, _.get(this.props, 'pageContext.frontmatter.author'));
+                    <span>On <time dateTime={moment(_.get(this.props, 'pageContext.frontmatter.date', null)).strftime('%Y-%m-%d %H:%M')}>{moment(_.get(this.props, 'pageContext.frontmatter.date', null)).strftime('%B %d, %Y')}</time></span>
+                    {_.get(this.props, 'pageContext.frontmatter.author', null) && ((() => {
+                        let author = getData(this.props.pageContext.site.data, _.get(this.props, 'pageContext.frontmatter.author', null));
                         return (
                           <span> by <Link to={safePrefix('/blog/author/' + author.slug)}>{author.first_name} {author.last_name}</Link></span>
                         );
@@ -45,11 +45,11 @@ export default class Post extends React.Component {
                   </div>
                 </header>
                 <div className="post__copy">
-                  {htmlToReact(_.get(this.props, 'pageContext.html'))}
+                  {htmlToReact(_.get(this.props, 'pageContext.html', null))}
                 </div>
-                {_.get(this.props, 'pageContext.frontmatter.tags') && (
+                {_.get(this.props, 'pageContext.frontmatter.tags', null) && (
                 <footer className="post__footer">
-                  <BlogPostTags {...this.props} tags={_.get(this.props, 'pageContext.frontmatter.tags')} />
+                  <BlogPostTags {...this.props} tags={_.get(this.props, 'pageContext.frontmatter.tags', null)} />
                 </footer>
                 )}
               </div>

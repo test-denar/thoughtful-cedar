@@ -5,8 +5,8 @@ import {getData, Link} from '../utils';
 
 export default class BlogPostCategories extends React.Component {
     render() {
-        let categories = _.get(this.props, 'categories');
-        let container_class = _.get(this.props, 'container_class');
+        let categories = _.get(this.props, 'categories', null);
+        let container_class = _.get(this.props, 'container_class', null);
         let category_len = _.size(categories);
         return (
             <div className={container_class}>

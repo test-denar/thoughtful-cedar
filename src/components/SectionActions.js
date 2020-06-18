@@ -5,7 +5,7 @@ import Action from './Action';
 
 export default class SectionActions extends React.Component {
     render() {
-        let actions = _.get(this.props, 'actions');
+        let actions = _.get(this.props, 'actions', null);
         return (
             _.map(actions, (action, action_idx) => (
               <Action key={action_idx} {...this.props} action={action} />

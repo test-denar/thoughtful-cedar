@@ -8,6 +8,8 @@ uploadDir: images
 dataDir: src/data
 pagesDir: src/pages
 pageLayoutKey: template
+logicFields:
+  - blog_feed_section.recent_count
 metadata:
   title: Starter
   description: An ultra customizable generic theme
@@ -479,7 +481,7 @@ models:
         name: label
         label: Label
         required: true
-      - type: url
+      - type: string
         name: url
         label: URL
         required: true
