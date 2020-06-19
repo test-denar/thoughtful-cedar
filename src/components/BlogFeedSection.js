@@ -22,26 +22,26 @@ export default class BlogFeedSection extends React.Component {
         }
         return (
             <section className="section section--posts">
-                {_.get(section, 'title', null) && (
-                    <div className="container container--md align-center">
-                        <h2 className="section__title">{_.get(section, 'title', null)}</h2>
-                    </div>
-                )}
-                <div className="container container--lg">
-                    <div className="flex flex--col-3">
-                        {_.map(posts_sorted, (post, post_idx) => {
-                            let is_post = _.get(post, 'frontmatter.template', null) === 'post';
+              {_.get(section, 'title', null) && (
+              <div className="container container--md align-center">
+                <h2 className="section__title">{_.get(section, 'title', null)}</h2>
+              </div>
+              )}
+              <div className="container container--lg">
+                <div className="flex flex--col-3">
+                  {_.map(posts_sorted, (post, post_idx) => {
+                      let is_post = _.get(post, 'frontmatter.template', null) === 'post';
+                      return (
+                        (is_post && ((show_recent === false) || (post_count < recent_count))) && ((() => {
+                             post_count = post_count + 1;
                             return (
-                                (is_post && ((show_recent === false) || (post_count < recent_count))) && ((() => {
-                                     post_count = post_count + 1;
-                                    return (
-                                        <BlogFeedItemFilter key={post_idx} {...this.props} blog_feed_section={section} post_page={post} section_author={section_author} section_category={section_category} />
-                                    );
-                                })())
-                            )
-                        })}
-                    </div>
+                              <BlogFeedItemFilter key={post_idx} {...this.props} blog_feed_section={section} post_page={post} section_author={section_author} section_category={section_category} />
+                            );
+                        })())
+                      )
+                  })}
                 </div>
+              </div>
             </section>
         );
     }

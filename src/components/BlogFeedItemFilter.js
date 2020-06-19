@@ -15,7 +15,7 @@ export default class BlogFeedItemFilter extends React.Component {
                 _.get(post, 'frontmatter.author', null) && ((() => {
                     let post_author = getData(this.props.pageContext.site.data, _.get(post, 'frontmatter.author', null));
                     return (
-                        (post_author.slug === _.get(section_author, 'slug', null)) && (
+                        (post_author.id === _.get(section_author, 'id', null)) && (
                             <BlogPostFeedItem {...this.props} blog_feed_section={section} post_page={post} />
                         )
                     );
@@ -24,7 +24,7 @@ export default class BlogFeedItemFilter extends React.Component {
                 _.map(_.get(post, 'frontmatter.categories', null), (category, category_idx) => {
                     let post_category = getData(this.props.pageContext.site.data, category);
                     return (
-                        (post_category.slug === _.get(section_category, 'slug', null)) && (
+                        (post_category.id === _.get(section_category, 'id', null)) && (
                             <BlogPostFeedItem key={category_idx} {...this.props} blog_feed_section={section} post_page={post} />
                         )
                     )

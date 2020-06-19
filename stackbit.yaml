@@ -116,11 +116,15 @@ models:
     label: Person
     folder: team
     fields:
-      - type: slug
-        name: slug
-        label: Slug
-        description: 'The slug of the author page "/blog/author/{slug}"'
+      - type: string
+        name: id
+        label: ID
+        description: 'A unique identifier used when filtering posts, e.g. "john-doe"'
         required: true
+      - type: string
+        name: link
+        label: Link
+        description: 'The link to the author page, e.g. "blog/author/john-doe"'
       - type: string
         name: first_name
         label: First Name
@@ -139,11 +143,15 @@ models:
     label: Category
     folder: categories
     fields:
-      - type: slug
-        name: slug
-        label: Slug
-        description: 'The slug of the category page "/blog/category/{slug}"'
+      - type: string
+        name: id
+        label: ID
+        description: 'A unique identifier used when filtering posts, e.g. "news"'
         required: true
+      - type: string
+        name: link
+        label: Link
+        description: 'The link to the category page, e.g. "blog/category/news"'
       - type: string
         name: title
         label: Title

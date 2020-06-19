@@ -39,7 +39,10 @@ export default class Post extends React.Component {
                     {_.get(this.props, 'pageContext.frontmatter.author', null) && ((() => {
                         let author = getData(this.props.pageContext.site.data, _.get(this.props, 'pageContext.frontmatter.author', null));
                         return (
-                          <span> by <Link to={safePrefix('/blog/author/' + author.slug)}>{author.first_name} {author.last_name}</Link></span>
+                          author.link ? (
+                            <span> by <Link to={safePrefix(author.link)}>{author.first_name} {author.last_name}</Link></span>
+                          ) : 
+                            <span> by {author.first_name} {author.last_name}</span>
                         );
                     })())}
                   </div>
