@@ -160,7 +160,7 @@ models:
     type: page
     label: Page
     layout: page
-    exclude: blog/**
+    exclude: blog/**/*
     fields:
       - type: string
         name: title
@@ -176,6 +176,10 @@ models:
     label: Post
     layout: post
     folder: blog
+    exclude:
+      - index.md
+      - category/**
+      - author/**
     fields:
       - type: string
         name: title
