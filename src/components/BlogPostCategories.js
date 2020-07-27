@@ -1,7 +1,7 @@
 import React from 'react';
 import _ from 'lodash';
 
-import {getData, Link, safePrefix} from '../utils';
+import {getData, Link, withPrefix} from '../utils';
 
 export default class BlogPostCategories extends React.Component {
     render() {
@@ -15,10 +15,10 @@ export default class BlogPostCategories extends React.Component {
               _.map(categories, (category, category_idx) => {
                   let category_data = getData(this.props.pageContext.site.data, category);
                   return (
-                    category_data.link ? (<React.Fragment key={category_idx}>
-                      <Link key={category_idx} to={safePrefix(category_data.link)}>{category_data.title}</Link>{(!(category_idx === category_len - 1)) && (', ')}
-                    </React.Fragment>) : <React.Fragment key={category_idx}>
-                      <span key={category_idx}>{category_data.title}</span>{(!(category_idx === category_len - 1)) && (', ')}
+                    category_data.link ? (<React.Fragment key={category_idx + '.1'}>
+                      <Link key={category_idx} to={withPrefix(category_data.link)}>{category_data.title}</Link>{(!(category_idx === category_len - 1)) && (', ')}
+                    </React.Fragment>) : <React.Fragment key={category_idx + '.3'}>
+                      <span key={category_idx + '.2'}>{category_data.title}</span>{(!(category_idx === category_len - 1)) && (', ')}
                     </React.Fragment>
                   )
               })}

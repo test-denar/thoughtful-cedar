@@ -4,7 +4,7 @@ import moment from 'moment-strftime';
 import {graphql} from 'gatsby';
 
 import {Layout} from '../components/index';
-import {safePrefix, getData, Link, htmlToReact} from '../utils';
+import {withPrefix, getData, Link, htmlToReact} from '../utils';
 import BlogPostCategories from '../components/BlogPostCategories';
 import BlogPostTags from '../components/BlogPostTags';
 
@@ -26,7 +26,7 @@ export default class Post extends React.Component {
               <div className="container container--md">
                 {_.get(this.props, 'pageContext.frontmatter.image', null) && (
                 <div className="post__image">
-                  <img src={safePrefix(_.get(this.props, 'pageContext.frontmatter.image', null))} alt={_.get(this.props, 'pageContext.frontmatter.title', null)} />
+                  <img src={withPrefix(_.get(this.props, 'pageContext.frontmatter.image', null))} alt={_.get(this.props, 'pageContext.frontmatter.title', null)} />
                 </div>
                 )}
                 <header className="post__header">
@@ -40,7 +40,7 @@ export default class Post extends React.Component {
                         let author = getData(this.props.pageContext.site.data, _.get(this.props, 'pageContext.frontmatter.author', null));
                         return (
                           author.link ? (
-                            <span> by <Link to={safePrefix(author.link)}>{author.first_name} {author.last_name}</Link></span>
+                            <span> by <Link to={withPrefix(author.link)}>{author.first_name} {author.last_name}</Link></span>
                           ) : 
                             <span> by {author.first_name} {author.last_name}</span>
                         );

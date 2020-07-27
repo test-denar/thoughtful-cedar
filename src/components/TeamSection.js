@@ -1,7 +1,7 @@
 import React from 'react';
 import _ from 'lodash';
 
-import {getData, safePrefix, markdownify} from '../utils';
+import {getData, withPrefix, markdownify} from '../utils';
 
 export default class TeamSection extends React.Component {
     render() {
@@ -22,7 +22,7 @@ export default class TeamSection extends React.Component {
                         <div className="card team-member">
                           {person_data.photo && (
                           <figure className="card__media card__media--bottom">
-                            <img src={safePrefix(person_data.photo)} alt={person_data.first_name + (person_data.last_name ? (' ' + person_data.last_name) : '') + ' Photo'} />
+                            <img src={withPrefix(person_data.photo)} alt={person_data.first_name + (person_data.last_name ? (' ' + person_data.last_name) : '') + ' Photo'} />
                           </figure>
                           )}
                           <div className="card__body">

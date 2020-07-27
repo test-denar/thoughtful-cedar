@@ -10,14 +10,6 @@ pagesDir: src/pages
 pageLayoutKey: template
 logicFields:
   - blog_feed_section.recent_count
-metadata:
-  title: Starter
-  description: Ultra customizable starter. A developers' favorite.
-  author: Stackbit
-  authorURL: 'https://www.stackbit.com'
-  images:
-    small: images/demo-256x192.png
-    large: images/demo-1024x768.png
 pageData:
   - pagePath: /
     initialExpandedPaths:

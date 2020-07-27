@@ -6,27 +6,27 @@
         "nav_links": [
             {
                 "label": "Features",
-                "url": "/features/",
+                "url": "/features",
                 "style": "link"
             },
             {
                 "label": "Blog",
-                "url": "/blog/",
+                "url": "/blog",
                 "style": "link"
             },
             {
                 "label": "About",
-                "url": "/about/",
+                "url": "/about",
                 "style": "link"
             },
             {
                 "label": "Style Guide",
-                "url": "/style-guide/",
+                "url": "/style-guide",
                 "style": "link"
             },
             {
                 "label": "Contact Us",
-                "url": "/contact/",
+                "url": "/contact",
                 "style": "primary"
             }
         ]
@@ -36,12 +36,12 @@
         "nav_links": [
             {
                 "label": "Contact Us",
-                "url": "/contact/",
+                "url": "/contact",
                 "style": "link"
             },
             {
                 "label": "Privacy and Terms",
-                "url": "/terms/",
+                "url": "/terms",
                 "style": "link"
             }
         ],
